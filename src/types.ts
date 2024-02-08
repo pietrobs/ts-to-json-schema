@@ -6,6 +6,7 @@
 type CommonId = number;
 
 /**
+ * @asType integer 
  * @minimum 1
  * @maximun 31
  * @examples 5
@@ -15,6 +16,7 @@ type MonthDay = number;
 /**
  * @minimum 1
  * @examples 5
+ * @asType integer 
  */
 type PositiveNumber = number;
 
@@ -66,19 +68,7 @@ export type CreateEnergyFarmRequest = {
 }
 
 
-// ************************************************************
 
-/**
- *  @asType integer 
- */
-type integer = number;
-
-export type Person = {
-    planet: "earth";
-    name: string;
-    age: integer;
-    address: string;
-}
 
 
 

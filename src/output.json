@@ -1,0 +1,235 @@
+// ts-json-schema-generator --path 'src/types.ts' --type 'CreateEnergyFarmRequest'
+{
+  "$ref": "#/definitions/CreateEnergyFarmRequest",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CreateEnergyFarmRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "additionalProperties": false,
+          "properties": {
+            "capacity": {
+              "additionalProperties": false,
+              "properties": {
+                "legal": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kW",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "maxLegal": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kW",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "remaining": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kWp",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "remainingLegal": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kW",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "sold": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kWp",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                },
+                "total": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "const": "kWp",
+                      "type": "string"
+                    },
+                    "value": {
+                      "examples": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "total",
+                "sold",
+                "remaining",
+                "legal"
+              ],
+              "type": "object"
+            },
+            "consortiumId": {
+              "examples": "this-is-an-energy-farm-id",
+              "minLength": 1,
+              "pattern": "\"^[\\\\w#-]+$\"\"",
+              "type": "number"
+            },
+            "discoBillReadingDay": {
+              "examples": 5,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "discoConsumerUnitId": {
+              "examples": "this-is-an-energy-farm-id",
+              "minLength": 1,
+              "pattern": "\"^[\\\\w#-]+$\"\"",
+              "type": "number"
+            },
+            "discoPassword": {
+              "type": "string"
+            },
+            "discoUsername": {
+              "type": "string"
+            },
+            "fullName": {
+              "type": "string"
+            },
+            "id": {
+              "examples": "this-is-an-energy-farm-id",
+              "minLength": 1,
+              "pattern": "\"^[\\\\w#-]+$\"\"",
+              "type": "number"
+            },
+            "monthlyGenerationForecast": {
+              "additionalProperties": false,
+              "properties": {
+                "unit": {
+                  "const": "kWh",
+                  "type": "string"
+                },
+                "value": {
+                  "items": {
+                    "examples": 5,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "maxItems": 12,
+                  "minItems": 12,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "unit",
+                "value"
+              ],
+              "type": "object"
+            },
+            "numberOfPanels": {
+              "examples": 5,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "openingDate": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "solar",
+                "hydro",
+                "biogas"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "capacity",
+            "consortiumId",
+            "discoBillReadingDay",
+            "discoConsumerUnitId",
+            "discoPassword",
+            "discoUsername",
+            "fullName",
+            "id",
+            "monthlyGenerationForecast",
+            "numberOfPanels",
+            "openingDate",
+            "type"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "body"
+      ],
+      "type": "object"
+    }
+  }
+}
